@@ -67,6 +67,10 @@ module Jawbone
       end
     end
 
+    define_method "ticks" do |id|
+      get_helper("moves/#{id}/ticks", {})
+    end
+
     define_method "moods" do |*args|
       get_helper("users/@me/mood", args.first || {})
     end
